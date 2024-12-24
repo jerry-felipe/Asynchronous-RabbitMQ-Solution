@@ -13,7 +13,34 @@
         <spring.boot.version>3.1.4</spring.boot.version>
     </properties>
     
-    <dependencies>
+	 <dependencies>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+	        <version>3.1.2</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-amqp</artifactId>
+	        <version>3.1.2</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-data-jpa</artifactId>
+	        <version>3.1.2</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>jakarta.validation</groupId>
+	        <artifactId>jakarta.validation-api</artifactId>
+	        <version>3.0.2</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-test</artifactId>
+	        <version>3.1.2</version>
+	        <scope>test</scope>
+	    </dependency>
+    
         <!-- Spring Boot Starter Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -66,6 +93,13 @@
         </dependency>
     </dependencies>
 
+	<parent>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-parent</artifactId>
+	    <version>3.1.2</version>
+	    <relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
     <build>
         <plugins>
             <!-- Spring Boot Maven Plugin -->
@@ -73,6 +107,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
+                
+                <configuration>
+                	<mainClass>Application</mainClass>
+            	</configuration>
             </plugin>
 
             <!-- Maven Compiler Plugin -->
